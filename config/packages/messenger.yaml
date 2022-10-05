@@ -1,0 +1,18 @@
+framework:
+    messenger:
+        failure_transport: failed
+
+        transports:
+            newsparser:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%/newsparser'
+                serializer: messenger.transport.symfony_serializer
+            newsparser_page:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%/newsparser_page'
+                serializer: messenger.transport.symfony_serializer
+            failed:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%/failed'
+                serializer: messenger.transport.symfony_serializer
+
+        routing:
+            App\Message\ParseNewsMessage: newsparser
+            App\Message\ParseNewsPageMessage: newsparser_page

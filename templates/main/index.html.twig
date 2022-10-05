@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Login as an admin or moderator</h5>
+        <p class="card-text">Have an account? Please use the login button bellow.</p>
+        <a class="btn btn-primary" href="{{ path('app_login') }}">Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Register for and account</h5>
+        <p class="card-text">Do not have an account? Please register bellow.</p>
+        <a class="btn btn-primary" href="{{ path('app_register') }}">Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
